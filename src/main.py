@@ -1,6 +1,7 @@
 # coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
 """
-MRS - Multimodal Recommendation System for Research
+MRLib: Multimodal Recommendation Library
 """
 
 import os
