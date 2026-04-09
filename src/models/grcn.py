@@ -1,27 +1,17 @@
 # coding: utf-8
-
-"""
-
-Graph-Refined Convolutional Network for Multimedia Recommendation with Implicit Feedback, MM 2020
-
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+Graph-Refined Convolutional Network for Multimedia Recommendation with Implicit Feedback, ACM MM, 2020
 """
 
 import numpy as np
-
 import torch
-
 import torch.nn as nn
-
 import torch.nn.functional as F
-
 from torch_geometric.nn.conv import MessagePassing
-
 from torch_geometric.utils import remove_self_loops, add_self_loops, softmax, dropout_adj
-
 from common.abstract_recommender import GeneralRecommender
-
 from common.loss import BPRLoss, EmbLoss
-
 from common.init import xavier_uniform_initialization
 
 

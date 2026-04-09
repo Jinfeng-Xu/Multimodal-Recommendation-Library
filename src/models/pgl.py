@@ -1,11 +1,7 @@
 # coding: utf-8
-# @email: y463213402@gmail.com
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
 r"""
-PGL
-################################################
-Reference:
-    https://github.com/demonph10/PGL
-    AAAI'2025: [Mind Individual Information! Principal Graph Learning for Multimedia Recommendation]
+Mind Individual Information! Principal Graph Learning for Multimedia Recommendation, AAAI, 2025
 """
 
 import os

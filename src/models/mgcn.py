@@ -1,7 +1,7 @@
 # coding: utf-8
-"""
-MGCN: Multi-View Graph Convolutional Network for Multimedia Recommendation
-ACM MM'2023
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+Multi-View Graph Convolutional Network for Multimedia Recommendation, ACM MM, 2023
 """
 
 import os

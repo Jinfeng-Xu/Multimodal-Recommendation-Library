@@ -1,7 +1,7 @@
 # coding: utf-8
-"""
-LATTICE: Mining Latent Structures for Multimedia Recommendation
-ACM MM'2021
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+Mining Latent Structures for Multimedia Recommendation, ACM MM, 2021
 """
 
 import os

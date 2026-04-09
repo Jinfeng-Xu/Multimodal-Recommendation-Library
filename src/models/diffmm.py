@@ -1,8 +1,9 @@
+# coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+DiffMM: Multi-Modal Diffusion Model for Recommendation, ACM MM, 2024
 """
-DiffMM - Diffusion Model for Multi-Modal Recommendation
-Complete implementation with full diffusion process for MRS framework
-Reference: https://github.com/HKUST-KnowComp/DiffMM
-"""
+
 import torch
 from torch import nn
 import torch.nn.functional as F

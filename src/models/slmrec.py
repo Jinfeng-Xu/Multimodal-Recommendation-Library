@@ -1,7 +1,7 @@
 # coding: utf-8
-"""
-Self-supervised Learning for Multimedia Recommendation
-Github: https://github.com/zltao/SLMRec
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+Self-Supervised Learning for Multimedia Recommendation, IEEE TMM, 2022
 """
 
 import torch

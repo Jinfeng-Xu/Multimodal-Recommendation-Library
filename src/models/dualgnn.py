@@ -1,7 +1,9 @@
 # coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+DualGNN: Dual Graph Neural Network for Multimedia Recommendation, IEEE TMM, 2021
 """
-DualGNN: Dual Graph Neural Network for Multimedia Recommendation, IEEE Transactions on Multimedia 2021.
-"""
+
 import os
 import numpy as np
 import scipy.sparse as sp

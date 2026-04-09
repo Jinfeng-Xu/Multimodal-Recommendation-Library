@@ -1,7 +1,7 @@
 # coding: utf-8
-"""
-MMGCN: Multi-modal Graph Convolution Network for Personalized Recommendation of Micro-video. 
-In ACM MM`19,
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+MMGCN: Multi-modal Graph Convolution Network for Personalized Recommendation of Micro-video, ACM MM, 2019
 """
 
 import os

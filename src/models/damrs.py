@@ -1,4 +1,8 @@
 # coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+Improving Multi-modal Recommender Systems by Denoising and Aligning Multi-modal Content and User Feedback, KDD, 2024
+"""
 
 import os
 import random

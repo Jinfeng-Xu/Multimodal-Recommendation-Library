@@ -1,6 +1,7 @@
-"""
-MMSSL - Multi-Modal Self-Supervised Learning
-Reference: https://github.com/HKUST-KnowComp/MMSSL
+# coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+Multi-Modal Self-Supervised Learning for Recommendation, WWW, 2023
 """
 import numpy as np
 import torch

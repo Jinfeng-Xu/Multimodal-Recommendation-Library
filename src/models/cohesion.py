@@ -1,3 +1,9 @@
+# coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+COHESION: Composite Graph Convolutional Network with Dual-Stage Fusion for Multimodal Recommendation, SIGIR, 2025
+"""
+
 import os
 import numpy as np
 import torch

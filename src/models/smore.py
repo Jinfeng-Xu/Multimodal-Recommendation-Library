@@ -1,12 +1,7 @@
 # coding: utf-8
-# rongqing001@e.ntu.edu.sg
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
 r"""
-SMORE - Multi-modal Recommender System
-Reference:
-    ACM WSDM 2025: Spectrum-based Modality Representation Fusion Graph Convolutional Network for Multimodal Recommendation
-
-Reference Code:
-    https://github.com/kennethorq/SMORE
+Spectrum-based Modality Representation Fusion Graph Convolutional Network for Multimodal Recommendation, WSDM, 2025
 """
 
 import os

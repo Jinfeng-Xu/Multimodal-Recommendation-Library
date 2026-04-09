@@ -1,3 +1,9 @@
+# coding: utf-8
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+LOBSTER: Bilateral global semantic enhancement for multimedia recommendation, Information Fusion, 2026
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

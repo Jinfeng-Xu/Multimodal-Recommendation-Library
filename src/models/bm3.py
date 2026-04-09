@@ -1,11 +1,9 @@
 # coding: utf-8
-# @email: enoche.chow@gmail.com
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
 r"""
-
-################################################
-paper:  Bootstrap Latent Representations for Multi-modal Recommendation
-https://arxiv.org/abs/2207.05969
+Bootstrap Latent Representations for Multi-modal Recommendation, WWW, 2023
 """
+
 import os
 import copy
 import random

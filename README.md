@@ -9,7 +9,7 @@
 > **中文文档:** [🇨🇳 中文版](README_CN.md)
 
 ## 🎉 News
-- [2026.04]🎯[Update]: Wee release the MRLib as a comprehensive benchmark and code base for mutlimodal recommendations.
+- [2026.04]🎯[Update]: We release the MRLib as a comprehensive benchmark and code base for mutlimodal recommendations.
 ---
 
 ## 🌟 Key Features

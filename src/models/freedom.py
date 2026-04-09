@@ -1,6 +1,7 @@
 # coding: utf-8
-"""
-FREEDOM: A Tale of Two Graphs: Freezing and Denoising Graph Structures for Multimodal Recommendation
+# @email: jinfeng.xu0605@gmail.com / jinfeng@connect.hku.hk
+r"""
+A Tale of Two Graphs: Freezing and Denoising Graph Structures for Multimodal Recommendation, ACM MM, 2023
 """
 
 import os
