@@ -1,0 +1,6 @@
+# MRS Framework - MMGCN Model Configuration
+embedding_size: 64
+n_layers: [2, 3]
+reg_weight: [0.01, 0.1, 1.0]
+
+hyper_parameters: ["n_layers", "reg_weight"]

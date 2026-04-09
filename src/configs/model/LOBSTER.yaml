@@ -1,0 +1,8 @@
+# MRS Framework - LOBSTER Model Configuration
+# Aligned with MMRec-tmp's LOBSTER
+embedding_size: 64
+reg_weight: [1e-01, 1e-02, 1e-03, 1e-04]
+dropout: [0.0, 0.1, 0.2, 0.3]
+factor_num_u: [1, 2, 3, 4, 5, 6, 7, 8]
+factor_num_i: [1, 2, 3, 4, 5, 6, 7, 8]
+hyper_parameters: ["dropout", "reg_weight", "factor_num_u", "factor_num_i"]

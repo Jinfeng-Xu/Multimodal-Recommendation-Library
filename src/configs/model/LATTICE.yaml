@@ -1,0 +1,18 @@
+# MRS Framework - LATTICE Model Configuration
+# 完全匹配 MMRec-tmp 的超参数
+embedding_size: 64
+feat_embed_dim: 64
+weight_size: [64, 64]
+
+learning_rate_scheduler: [0.96, 50]
+lambda_coeff: 0.9
+reg_weight: [1e-05, 1e-04, 1e-03]
+
+cf_model: lightgcn
+mess_dropout: [0.1, 0.1]
+n_layers: 1
+knn_k: 10
+
+learning_rate: [0.0001, 0.001]
+
+hyper_parameters: ["reg_weight", "learning_rate"]

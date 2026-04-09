@@ -1,0 +1,15 @@
+# MRS Framework - BM3 Model Configuration
+# BM3 模型配置
+
+# 模型特定超参数
+embedding_size: 64
+n_layers: [1, 2]
+dropout: [0.2, 0.3]
+reg_weight: [0.1]
+cl_weight: 2.0
+
+# 不使用负采样（BM3 原论文设置）
+use_neg_sampling: False
+
+# 超参数搜索
+hyper_parameters: ["n_layers", "reg_weight", "dropout"]

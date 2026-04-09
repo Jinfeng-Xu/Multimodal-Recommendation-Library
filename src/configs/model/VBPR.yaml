@@ -1,0 +1,5 @@
+# MRS Framework - VBPR Model Configuration
+embedding_size: 64
+reg_weight: [0.01, 0.1, 1.0]
+
+hyper_parameters: ["reg_weight"]

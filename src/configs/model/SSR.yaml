@@ -1,0 +1,19 @@
+embedding_size: [64]
+feat_embed_dim: 64
+
+n_mm_layers: [1]
+num_layers: [2]
+knn_k: [10]
+mm_image_weight: 0.1
+mix_alpha: [0.1]
+band_num: [3]
+k_poly: [5]
+tau: [0.2]
+ma_rate: [0.1]
+aggr_mode: ['add']
+out_mode: ['aggr']
+learning_rate: [0.0001]
+cl_weight: [0.0001]
+ma_weight: [0.001]
+reg_weight: [0.1]
+hyper_parameters: ["embedding_size","knn_k", "n_mm_layers", "num_layers", "aggr_mode","out_mode", "reg_weight", "ma_rate", "band_num", "k_poly", "tau", "learning_rate","cl_weight","mix_alpha","ma_weight"]

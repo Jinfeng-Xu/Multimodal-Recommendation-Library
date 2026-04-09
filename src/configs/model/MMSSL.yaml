@@ -1,0 +1,9 @@
+# MRS Framework - MMSSL Model Configuration
+embedding_size: 64
+mmlayer: [2, 3]
+ssl_temp: [0.2, 0.4, 0.6]
+ssl_alpha: [0.1]
+G_rate: [0.0001]
+reg_weight: [1e-5, 1e-4]
+
+hyper_parameters: ["reg_weight", "ssl_alpha", "ssl_temp", "G_rate", "mmlayer"]

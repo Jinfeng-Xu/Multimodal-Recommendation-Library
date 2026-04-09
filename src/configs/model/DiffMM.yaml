@@ -1,0 +1,13 @@
+# MRS Framework - DiffMM Model Configuration
+# Aligned with ChaoRec
+embedding_size: 64
+feat_embed_dim: 64
+n_layers: 2
+dropout: 0.2
+aggr_mode: 'add'
+reg_weight: [0.001]
+learning_rate: 0.001
+batch_size: 1024
+num_epoch: 1000
+
+hyper_parameters: ["reg_weight"]

@@ -1,0 +1,13 @@
+# MRS Framework - SLMRec Model Configuration
+recdim: 64
+layer_num: [2, 3]
+reg_weight: [0.0001, 0.001, 0.01]
+temp: 0.2
+ssl_task: 'FM'
+ssl_temp: 0.2
+ssl_alpha: 0.1
+adj_type: 'pre'
+init: 'xavier'
+mm_fusion_mode: 'concat'
+
+hyper_parameters: ["layer_num", "reg_weight"]

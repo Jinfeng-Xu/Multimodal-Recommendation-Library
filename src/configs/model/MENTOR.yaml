@@ -1,0 +1,17 @@
+# MRS Framework - MENTOR Model Configuration
+embedding_size: 64
+feat_embed_dim: 64
+
+n_mm_layers: 1
+n_layers: 2
+knn_k: 10
+mm_image_weight: 0.1
+learning_rate: [0.0001]
+reg_weight: [0.001]
+dropout: [0.5]
+mask_weight_f: [1.5]
+mask_weight_g: [0.001]
+align_weight: [0.1]
+temp: [0.2]
+
+hyper_parameters: ["reg_weight", "learning_rate", "dropout", "mask_weight_f", "mask_weight_g", "align_weight", "temp"]

@@ -1,0 +1,9 @@
+# MRS Framework - DualGNN Model Configuration
+embedding_size: 64
+k: [40]
+aggr_mode: 'mean'
+construction: 'weighted_sum'
+drop_rate: 0.1
+reg_weight: [0.01, 0.1, 1.0]
+
+hyper_parameters: ["k", "reg_weight"]

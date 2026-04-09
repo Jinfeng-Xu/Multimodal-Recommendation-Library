@@ -1,0 +1,9 @@
+# MRS Framework - Pet Dataset Configuration
+USER_ID_FIELD: userID
+ITEM_ID_FIELD: itemID
+TIME_FIELD: timestamp
+
+inter_splitting_label: x_label
+
+inter_file_name: 'pet.inter'
+field_separator: "\t"
