@@ -44,7 +44,9 @@ class Config(object):
         file_list = []
         
         # Configuration hierarchy: overall -> dataset -> model
-        cur_dir = os.getcwd()
+        cur_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        if not os.path.isdir(os.path.join(cur_dir, 'configs')):
+            cur_dir = os.getcwd()
         configs_dir = os.path.join(cur_dir, 'configs')
         
         file_list.append(os.path.join(configs_dir, "overall.yaml"))
@@ -85,7 +87,9 @@ class Config(object):
     def _set_default_parameters(self):
         """Set default parameters"""
         smaller_metric = ['rmse', 'mae', 'logloss']
-        valid_metric = self.final_config_dict['valid_metric'].split('@')[0]
+        valid_metric = self.final_config_dict.get('valid_metric', 'Recall@20')
+        self.final_config_dict['valid_metric'] = valid_metric
+        valid_metric = valid_metric.split('@')[0].lower()
         self.final_config_dict['valid_metric_bigger'] = False if valid_metric in smaller_metric else True
         
         # Add seed to hyper_parameters if not already present

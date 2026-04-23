@@ -19,6 +19,9 @@ from utils.visualization import TrainingVisualizer
 
 class AbstractTrainer(object):
     """Base trainer class"""
+    def __init__(self, config, model):
+        self.config = config
+        self.model = model
     
     def fit(self, train_data):
         raise NotImplementedError()

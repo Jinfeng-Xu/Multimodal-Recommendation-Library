@@ -3,7 +3,7 @@ use_gpu: True
 seed: [2026]
 
 # multi-modal raw features
-data_path: '../data/'
+data_path: './data/'
 inter_splitting_label: 'x_label'
 is_multimodal_model: True
 
