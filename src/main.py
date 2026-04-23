@@ -20,12 +20,13 @@ if __name__ == '__main__':
     parser.add_argument('--no-vis', action='store_true', default=False,
                        help='Disable training visualization')
 
+    args, _ = parser.parse_known_args()
+
     config_dict = {
-        'gpu_id': 0,
+        'gpu_id': arg.gpu_id,
         'enable_visualization': True,  # Enable visualization by default
     }
-
-    args, _ = parser.parse_known_args()
+   
     
     # Disable visualization if user specified --no-vis
     if args.no_vis:
