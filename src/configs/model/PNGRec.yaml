@@ -1,0 +1,20 @@
+# SIGIR 2026: Popular-Niche Wavelet Graph Learning for Multimodal Recommendation
+embedding_size: 64
+n_ui_layers: 4
+n_layers: 1
+learning_rate_scheduler: [0.96, 50]
+reg_weight: 1e-4
+cl_loss: 0.01
+temperature: 0.2
+image_knn_k: 25
+text_knn_k: 15
+dropout_rate: 0.4
+USE_PNG: True
+USE_PNQ: True
+USE_PNL: True
+wavelet: db8
+wavelet_level: 8
+wavelet_batch_size: 128
+knn_chunk_size: 1024
+
+hyper_parameters: []

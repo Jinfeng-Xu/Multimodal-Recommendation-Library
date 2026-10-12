@@ -1,0 +1,12 @@
+# TMM 2026: Hierarchy-Aware Multimodal Distillation for Recommendation
+embedding_size: 64
+n_layers: 3
+curvature: 1.0
+dropout: 0.0
+channel_weight: 0.6
+kl_weight: 0.6
+tau: 1.5
+l2_weight: 0.0
+
+# A single reproducible run; dataset-specific tuning can override these values.
+hyper_parameters: []
