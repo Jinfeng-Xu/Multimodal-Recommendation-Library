@@ -2,23 +2,54 @@
   "model": "FREEDOM",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "dropout": 0.8,
-    "reg_weight": 0.0
+    "reg_weight": 0.001,
+    "seed": 2026
   },
-  "best_epoch": 137,
+  "best_epoch": 113,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.096,
+  "best_valid_score": 0.0969,
   "best_valid_result": {
-    "recall@10": 0.0616,
-    "recall@20": 0.096,
-    "ndcg@10": 0.0329,
-    "ndcg@20": 0.0417
+    "recall@10": 0.0622,
+    "recall@20": 0.0969,
+    "recall@50": 0.1595,
+    "ndcg@10": 0.0335,
+    "ndcg@20": 0.0423,
+    "ndcg@50": 0.0547,
+    "precision@10": 0.0065,
+    "precision@20": 0.0051,
+    "precision@50": 0.0034,
+    "map@10": 0.0244,
+    "map@20": 0.0268,
+    "map@50": 0.0287
   },
   "best_test_result": {
     "recall@10": 0.0622,
-    "recall@20": 0.0977,
-    "ndcg@10": 0.0337,
-    "ndcg@20": 0.0427
-  }
+    "recall@20": 0.0975,
+    "recall@50": 0.1656,
+    "ndcg@10": 0.0339,
+    "ndcg@20": 0.043,
+    "ndcg@50": 0.0568,
+    "precision@10": 0.0068,
+    "precision@20": 0.0054,
+    "precision@50": 0.0037,
+    "map@10": 0.0245,
+    "map@20": 0.027,
+    "map@50": 0.0291
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0622,
+    "recall@20": 0.0975,
+    "recall@50": 0.1656,
+    "ndcg@10": 0.0339,
+    "ndcg@20": 0.043,
+    "ndcg@50": 0.0568,
+    "precision@10": 0.0068,
+    "precision@20": 0.0054,
+    "precision@50": 0.0037,
+    "map@10": 0.0245,
+    "map@20": 0.027,
+    "map@50": 0.0291
+  },
+  "source_log": "docs/log/FREEDOM/baby/FREEDOM-baby-Oct-13-2026-17-09-38.log"
 }

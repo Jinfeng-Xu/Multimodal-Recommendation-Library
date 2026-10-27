@@ -2,26 +2,57 @@
   "model": "MMSSL",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "reg_weight": 1e-05,
     "ssl_alpha": 0.01,
     "ssl_temp": 0.2,
-    "G_rate": 0.0001,
-    "mmlayer": 2
+    "G_rate": 0.01,
+    "mmlayer": 2,
+    "seed": 2026
   },
   "best_epoch": 14,
   "valid_metric": "Recall@20",
   "best_valid_score": 0.0866,
   "best_valid_result": {
-    "recall@10": 0.0563,
+    "recall@10": 0.056,
     "recall@20": 0.0866,
-    "ndcg@10": 0.0302,
-    "ndcg@20": 0.0378
+    "recall@50": 0.1494,
+    "ndcg@10": 0.0301,
+    "ndcg@20": 0.0378,
+    "ndcg@50": 0.0503,
+    "precision@10": 0.0059,
+    "precision@20": 0.0046,
+    "precision@50": 0.0032,
+    "map@10": 0.0218,
+    "map@20": 0.0239,
+    "map@50": 0.0259
   },
   "best_test_result": {
-    "recall@10": 0.0571,
-    "recall@20": 0.0909,
-    "ndcg@10": 0.0308,
-    "ndcg@20": 0.0395
-  }
+    "recall@10": 0.0569,
+    "recall@20": 0.0907,
+    "recall@50": 0.1543,
+    "ndcg@10": 0.0309,
+    "ndcg@20": 0.0396,
+    "ndcg@50": 0.0524,
+    "precision@10": 0.0063,
+    "precision@20": 0.005,
+    "precision@50": 0.0035,
+    "map@10": 0.0222,
+    "map@20": 0.0245,
+    "map@50": 0.0265
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0569,
+    "recall@20": 0.0907,
+    "recall@50": 0.1543,
+    "ndcg@10": 0.0309,
+    "ndcg@20": 0.0396,
+    "ndcg@50": 0.0524,
+    "precision@10": 0.0063,
+    "precision@20": 0.005,
+    "precision@50": 0.0035,
+    "map@10": 0.0222,
+    "map@20": 0.0245,
+    "map@50": 0.0265
+  },
+  "source_log": "docs/log/MMSSL/baby/MMSSL-baby-Oct-22-2026-21-25-02.log"
 }

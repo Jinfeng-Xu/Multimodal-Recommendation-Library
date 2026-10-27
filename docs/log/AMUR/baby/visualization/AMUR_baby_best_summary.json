@@ -1,0 +1,57 @@
+{
+  "model": "AMUR",
+  "dataset": "baby",
+  "best_hyper_parameters": {
+    "cl_ip_loss": 0.001,
+    "uicl_loss": 0.01,
+    "kl_loss": 0.01,
+    "res_conn": 0.9,
+    "seed": 2026
+  },
+  "best_epoch": 25,
+  "valid_metric": "Recall@20",
+  "best_valid_score": 0.0982,
+  "best_valid_result": {
+    "recall@10": 0.0641,
+    "recall@20": 0.0982,
+    "recall@50": 0.1639,
+    "ndcg@10": 0.0343,
+    "ndcg@20": 0.043,
+    "ndcg@50": 0.0562,
+    "precision@10": 0.0067,
+    "precision@20": 0.0052,
+    "precision@50": 0.0035,
+    "map@10": 0.025,
+    "map@20": 0.0273,
+    "map@50": 0.0294
+  },
+  "best_test_result": {
+    "recall@10": 0.0663,
+    "recall@20": 0.1001,
+    "recall@50": 0.1688,
+    "ndcg@10": 0.0359,
+    "ndcg@20": 0.0445,
+    "ndcg@50": 0.0584,
+    "precision@10": 0.0073,
+    "precision@20": 0.0055,
+    "precision@50": 0.0037,
+    "map@10": 0.0258,
+    "map@20": 0.028,
+    "map@50": 0.0302
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0663,
+    "recall@20": 0.1001,
+    "recall@50": 0.1688,
+    "ndcg@10": 0.0359,
+    "ndcg@20": 0.0445,
+    "ndcg@50": 0.0584,
+    "precision@10": 0.0073,
+    "precision@20": 0.0055,
+    "precision@50": 0.0037,
+    "map@10": 0.0258,
+    "map@20": 0.028,
+    "map@50": 0.0302
+  },
+  "source_log": "docs/log/AMUR/baby/AMUR-baby-Oct-13-2026-04-01-49.log"
+}

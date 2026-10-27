@@ -1,24 +1,106 @@
-# ACM MM 2026: One Graph, Multiple Gains
 embedding_size: 64
-n_ui_layers: 3
+feat_embed_dim: 64
 n_mm_layers: 1
+n_layers: 2
 knn_k: 10
-knn_chunk_size: 1024
 mm_image_weight: 0.1
-learning_rate: 1e-4
-learning_rate_scheduler: [0.96, 50]
-reg_weight: 1e-3
-dropout: 0.1
-lambda_spec: 0.1
+aggr_mode: "add"
+learning_rate: 0.0001
+weight_size: 64
+lambda_coeff: 0.9
+lambda_spec: [0.1]
 dct_keep_ratio: 0.2
+beta_lf: 0.6
+beta_hf: 0.2
+beta_mix: 0.2
+spec_gate_tau: 1
+enable_spec_gate: False
+enable_residual: False
+decay_base: 0.9
+decay_weight: [0.95]
+weight_decay: [1e-4]
 item_co_topk: 10
-alpha_item_co: 0.2
-cui_gamma: 0.1
-gpert_mask_p: 0.2
-gpert_lambda: 1e-4
-clu_lambda: 1e-4
-cli_lambda: 1e-5
-temperature: 0.2
-rig_on: True
+alpha_item_co: [0.2]
+cui_topk: 10
+cui_theta: 0.1
+cui_gamma: [0.1]
 
-hyper_parameters: []
+# Graph perturbation SSL — kept (same as DuGRec)
+gpert_mask_p: 0.2
+gpert_lambda: [1e-4]
+
+# NCER — retained, fixed at 0.5 (minimal effect, zero cost)
+ncer_alpha: [0.5]
+
+# ─── Innovation 2a: Residual II Gate (RIG) ───
+# Learnable per-item gate on II propagation contribution.
+# Trained end-to-end via BPR — no conflicting auxiliary loss.
+# rig_on: [True, False] tests gate vs standard residual.
+rig_on: [True, False]
+
+# ─── Innovation 2b: II-Neighbor BPR Augmentation (INA) ───
+# Uses II-graph neighbors as soft BPR positives.
+# Compatible with BPR (both push same direction).
+# ina_lambda=0 disables INA, leaving only RIG.
+ina_lambda: [0, 0.2, 0.4, 0.6, 0.8]
+ina_topk: 5
+ina_margin_discount: 0.5
+
+# baby (bimodal: visual + text)
+n_ui_layers: 3
+reg_weight: [0.001]
+dropout: 0.1
+clu_lambda: [1e-4]
+cli_lambda: [1e-5]
+
+# # sports
+# n_ui_layers: 4
+# reg_weight: [0.01]
+# dropout: 0.05
+# clu_lambda: [1e-5]
+# cli_lambda: [1e-4]
+
+# # clothing
+# n_ui_layers: 3
+# reg_weight: [0.001]
+# dropout: 0.01
+# clu_lambda: [1e-4]
+# cli_lambda: [1e-5]
+
+# # electronics
+# n_ui_layers: 4
+# reg_weight: [0.01]
+# dropout: 0.1
+# clu_lambda: [1e-4]
+# cli_lambda: [1e-5]
+
+# # microlens
+# n_ui_layers: 3
+# reg_weight: [0.1]
+# dropout: 0.1
+# clu_lambda: [1e-2]
+# cli_lambda: [1e-5]
+
+# # tiktok (trimodal: visual + text + audio)
+# n_ui_layers: 3
+# reg_weight: [0.001]
+# dropout: 0.1
+# clu_lambda: [1e-4]
+# cli_lambda: [1e-5]
+# # Audio is automatically enabled when audio_feat.npy or audio_feat.pt exists.
+
+hyper_parameters:
+  [
+    "reg_weight",
+    "weight_decay",
+    "decay_weight",
+    "alpha_item_co",
+    "clu_lambda",
+    "cli_lambda",
+    "gpert_lambda",
+    "lambda_spec",
+    "cui_gamma",
+    "ncer_alpha",
+    "rig_on",
+    "ina_lambda",
+  ]

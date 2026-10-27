@@ -2,10 +2,10 @@
   "model": "DiffMM",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "reg_weight": 0.0001,
     "dropout": 0.1,
-    "n_layers": 3
+    "n_layers": 3,
+    "seed": 2026
   },
   "best_epoch": 23,
   "valid_metric": "Recall@20",
@@ -13,13 +13,44 @@
   "best_valid_result": {
     "recall@10": 0.059,
     "recall@20": 0.0898,
+    "recall@50": 0.154,
     "ndcg@10": 0.0316,
-    "ndcg@20": 0.0395
+    "ndcg@20": 0.0395,
+    "ndcg@50": 0.0523,
+    "precision@10": 0.0062,
+    "precision@20": 0.0048,
+    "precision@50": 0.0033,
+    "map@10": 0.023,
+    "map@20": 0.0251,
+    "map@50": 0.0271
   },
   "best_test_result": {
     "recall@10": 0.0578,
     "recall@20": 0.09,
+    "recall@50": 0.155,
     "ndcg@10": 0.0314,
-    "ndcg@20": 0.0397
-  }
+    "ndcg@20": 0.0397,
+    "ndcg@50": 0.0528,
+    "precision@10": 0.0064,
+    "precision@20": 0.005,
+    "precision@50": 0.0035,
+    "map@10": 0.0227,
+    "map@20": 0.0249,
+    "map@50": 0.0269
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0578,
+    "recall@20": 0.09,
+    "recall@50": 0.155,
+    "ndcg@10": 0.0314,
+    "ndcg@20": 0.0397,
+    "ndcg@50": 0.0528,
+    "precision@10": 0.0064,
+    "precision@20": 0.005,
+    "precision@50": 0.0035,
+    "map@10": 0.0227,
+    "map@20": 0.0249,
+    "map@50": 0.0269
+  },
+  "source_log": "docs/log/DiffMM/baby/DiffMM-baby-Oct-14-2026-20-29-04.log"
 }

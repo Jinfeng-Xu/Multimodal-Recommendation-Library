@@ -2,24 +2,55 @@
   "model": "LATTICE",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "reg_weight": 1e-05,
     "learning_rate": 0.001,
-    "n_layers": 2
+    "n_layers": 2,
+    "seed": 2026
   },
-  "best_epoch": 65,
+  "best_epoch": 94,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.086,
+  "best_valid_score": 0.0861,
   "best_valid_result": {
-    "recall@10": 0.0531,
-    "recall@20": 0.086,
-    "ndcg@10": 0.0284,
-    "ndcg@20": 0.0368
+    "recall@10": 0.0543,
+    "recall@20": 0.0861,
+    "recall@50": 0.1469,
+    "ndcg@10": 0.0293,
+    "ndcg@20": 0.0373,
+    "ndcg@50": 0.0494,
+    "precision@10": 0.0057,
+    "precision@20": 0.0046,
+    "precision@50": 0.0031,
+    "map@10": 0.0213,
+    "map@20": 0.0234,
+    "map@50": 0.0253
   },
   "best_test_result": {
-    "recall@10": 0.0584,
-    "recall@20": 0.0893,
-    "ndcg@10": 0.0314,
-    "ndcg@20": 0.0393
-  }
+    "recall@10": 0.0597,
+    "recall@20": 0.0898,
+    "recall@50": 0.1495,
+    "ndcg@10": 0.0322,
+    "ndcg@20": 0.04,
+    "ndcg@50": 0.0521,
+    "precision@10": 0.0066,
+    "precision@20": 0.005,
+    "precision@50": 0.0034,
+    "map@10": 0.0231,
+    "map@20": 0.0252,
+    "map@50": 0.0271
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0597,
+    "recall@20": 0.0898,
+    "recall@50": 0.1495,
+    "ndcg@10": 0.0322,
+    "ndcg@20": 0.04,
+    "ndcg@50": 0.0521,
+    "precision@10": 0.0066,
+    "precision@20": 0.005,
+    "precision@50": 0.0034,
+    "map@10": 0.0231,
+    "map@20": 0.0252,
+    "map@50": 0.0271
+  },
+  "source_log": "docs/log/LATTICE/baby/LATTICE-baby-Oct-12-2026-19-40-26.log"
 }

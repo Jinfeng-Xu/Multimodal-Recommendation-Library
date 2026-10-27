@@ -2,24 +2,55 @@
   "model": "DRAGON",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "aggr_mode": "add",
-    "reg_weight": 0.0001,
-    "learning_rate": 0.0001
+    "reg_weight": 0.01,
+    "learning_rate": 0.0001,
+    "seed": 2026
   },
-  "best_epoch": 33,
+  "best_epoch": 53,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.0986,
+  "best_valid_score": 0.0996,
   "best_valid_result": {
-    "recall@10": 0.0625,
-    "recall@20": 0.0986,
-    "ndcg@10": 0.0338,
-    "ndcg@20": 0.043
+    "recall@10": 0.0644,
+    "recall@20": 0.0996,
+    "recall@50": 0.1634,
+    "ndcg@10": 0.0344,
+    "ndcg@20": 0.0433,
+    "ndcg@50": 0.0561,
+    "precision@10": 0.0068,
+    "precision@20": 0.0053,
+    "precision@50": 0.0035,
+    "map@10": 0.0249,
+    "map@20": 0.0273,
+    "map@50": 0.0293
   },
   "best_test_result": {
-    "recall@10": 0.0637,
-    "recall@20": 0.1004,
-    "ndcg@10": 0.0351,
-    "ndcg@20": 0.0445
-  }
+    "recall@10": 0.0644,
+    "recall@20": 0.0993,
+    "recall@50": 0.1668,
+    "ndcg@10": 0.035,
+    "ndcg@20": 0.044,
+    "ndcg@50": 0.0577,
+    "precision@10": 0.0071,
+    "precision@20": 0.0055,
+    "precision@50": 0.0037,
+    "map@10": 0.0253,
+    "map@20": 0.0277,
+    "map@50": 0.0298
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0644,
+    "recall@20": 0.0993,
+    "recall@50": 0.1668,
+    "ndcg@10": 0.035,
+    "ndcg@20": 0.044,
+    "ndcg@50": 0.0577,
+    "precision@10": 0.0071,
+    "precision@20": 0.0055,
+    "precision@50": 0.0037,
+    "map@10": 0.0253,
+    "map@20": 0.0277,
+    "map@50": 0.0298
+  },
+  "source_log": "docs/log/DRAGON/baby/DRAGON-baby-Oct-14-2026-08-13-27.log"
 }

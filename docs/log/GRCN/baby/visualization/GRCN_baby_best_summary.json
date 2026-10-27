@@ -2,24 +2,55 @@
   "model": "GRCN",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
-    "n_layers": 1,
-    "reg_weight": 0.0001,
-    "learning_rate": 0.0001
+    "n_layers": 3,
+    "reg_weight": 0.1,
+    "learning_rate": 0.0001,
+    "seed": 2026
   },
-  "best_epoch": 385,
+  "best_epoch": 345,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.0753,
+  "best_valid_score": 0.0748,
   "best_valid_result": {
-    "recall@10": 0.0467,
-    "recall@20": 0.0753,
-    "ndcg@10": 0.0247,
-    "ndcg@20": 0.0319
+    "recall@10": 0.0453,
+    "recall@20": 0.0748,
+    "recall@50": 0.1337,
+    "ndcg@10": 0.0239,
+    "ndcg@20": 0.0314,
+    "ndcg@50": 0.0431,
+    "precision@10": 0.0048,
+    "precision@20": 0.0039,
+    "precision@50": 0.0028,
+    "map@10": 0.0171,
+    "map@20": 0.0191,
+    "map@50": 0.0209
   },
   "best_test_result": {
-    "recall@10": 0.0493,
-    "recall@20": 0.079,
-    "ndcg@10": 0.0258,
-    "ndcg@20": 0.0334
-  }
+    "recall@10": 0.0475,
+    "recall@20": 0.0776,
+    "recall@50": 0.1368,
+    "ndcg@10": 0.0251,
+    "ndcg@20": 0.0328,
+    "ndcg@50": 0.0448,
+    "precision@10": 0.0053,
+    "precision@20": 0.0043,
+    "precision@50": 0.0031,
+    "map@10": 0.0176,
+    "map@20": 0.0197,
+    "map@50": 0.0215
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0475,
+    "recall@20": 0.0776,
+    "recall@50": 0.1368,
+    "ndcg@10": 0.0251,
+    "ndcg@20": 0.0328,
+    "ndcg@50": 0.0448,
+    "precision@10": 0.0053,
+    "precision@20": 0.0043,
+    "precision@50": 0.0031,
+    "map@10": 0.0176,
+    "map@20": 0.0197,
+    "map@50": 0.0215
+  },
+  "source_log": "docs/log/GRCN/baby/GRCN-baby-Oct-13-2026-21-05-03.log"
 }

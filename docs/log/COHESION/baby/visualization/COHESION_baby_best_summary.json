@@ -2,26 +2,57 @@
   "model": "COHESION",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
-    "reg_weight": 0.001,
+    "reg_weight": 0.01,
     "learning_rate": 0.0001,
     "dropout": 0,
     "num_layer": 1,
-    "knn_k": 10
+    "knn_k": 10,
+    "seed": 2026
   },
-  "best_epoch": 86,
+  "best_epoch": 144,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.1021,
+  "best_valid_score": 0.1037,
   "best_valid_result": {
-    "recall@10": 0.0633,
-    "recall@20": 0.1021,
-    "ndcg@10": 0.0342,
-    "ndcg@20": 0.0441
+    "recall@10": 0.0659,
+    "recall@20": 0.1037,
+    "recall@50": 0.1701,
+    "ndcg@10": 0.0356,
+    "ndcg@20": 0.0451,
+    "ndcg@50": 0.0585,
+    "precision@10": 0.0069,
+    "precision@20": 0.0054,
+    "precision@50": 0.0036,
+    "map@10": 0.026,
+    "map@20": 0.0286,
+    "map@50": 0.0307
   },
   "best_test_result": {
-    "recall@10": 0.067,
-    "recall@20": 0.105,
-    "ndcg@10": 0.035,
-    "ndcg@20": 0.0447
-  }
+    "recall@10": 0.0684,
+    "recall@20": 0.1045,
+    "recall@50": 0.1744,
+    "ndcg@10": 0.0363,
+    "ndcg@20": 0.0456,
+    "ndcg@50": 0.0597,
+    "precision@10": 0.0075,
+    "precision@20": 0.0058,
+    "precision@50": 0.0039,
+    "map@10": 0.0257,
+    "map@20": 0.0282,
+    "map@50": 0.0304
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0684,
+    "recall@20": 0.1045,
+    "recall@50": 0.1744,
+    "ndcg@10": 0.0363,
+    "ndcg@20": 0.0456,
+    "ndcg@50": 0.0597,
+    "precision@10": 0.0075,
+    "precision@20": 0.0058,
+    "precision@50": 0.0039,
+    "map@10": 0.0257,
+    "map@20": 0.0282,
+    "map@50": 0.0304
+  },
+  "source_log": "docs/log/COHESION/baby/COHESION-baby-Oct-25-2026-07-21-29.log"
 }

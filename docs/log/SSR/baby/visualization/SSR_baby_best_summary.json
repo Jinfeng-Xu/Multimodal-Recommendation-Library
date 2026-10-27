@@ -2,7 +2,6 @@
   "model": "SSR",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "embedding_size": 64,
     "knn_k": 10,
     "n_mm_layers": 1,
@@ -10,28 +9,60 @@
     "aggr_mode": "add",
     "out_mode": "aggr",
     "reg_weight": 0.01,
-    "ma_rate": 0.1,
+    "ma_rate": 0.2,
     "band_num": 3,
     "k_poly": 5,
     "tau": 0.2,
     "learning_rate": 0.0001,
     "cl_weight": 0.0001,
     "mix_alpha": 0.1,
-    "ma_weight": 0.01
+    "ma_weight": 0.01,
+    "seed": 2026
   },
   "best_epoch": 62,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.1009,
+  "best_valid_score": 0.101,
   "best_valid_result": {
     "recall@10": 0.0651,
-    "recall@20": 0.1009,
+    "recall@20": 0.101,
+    "recall@50": 0.1716,
     "ndcg@10": 0.0345,
-    "ndcg@20": 0.0436
+    "ndcg@20": 0.0436,
+    "ndcg@50": 0.0577,
+    "precision@10": 0.0068,
+    "precision@20": 0.0053,
+    "precision@50": 0.0036,
+    "map@10": 0.0249,
+    "map@20": 0.0273,
+    "map@50": 0.0296
   },
   "best_test_result": {
     "recall@10": 0.0665,
     "recall@20": 0.1065,
+    "recall@50": 0.1758,
     "ndcg@10": 0.0357,
-    "ndcg@20": 0.046
-  }
+    "ndcg@20": 0.046,
+    "ndcg@50": 0.06,
+    "precision@10": 0.0073,
+    "precision@20": 0.0059,
+    "precision@50": 0.0039,
+    "map@10": 0.0255,
+    "map@20": 0.0283,
+    "map@50": 0.0305
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0665,
+    "recall@20": 0.1065,
+    "recall@50": 0.1758,
+    "ndcg@10": 0.0357,
+    "ndcg@20": 0.046,
+    "ndcg@50": 0.06,
+    "precision@10": 0.0073,
+    "precision@20": 0.0059,
+    "precision@50": 0.0039,
+    "map@10": 0.0255,
+    "map@20": 0.0283,
+    "map@50": 0.0305
+  },
+  "source_log": "docs/log/SSR/baby/SSR-baby-Oct-19-2026-07-05-31.log"
 }

@@ -2,8 +2,8 @@
   "model": "VBPR",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
-    "reg_weight": 1.0
+    "reg_weight": 1.0,
+    "seed": 2026
   },
   "best_epoch": 15,
   "valid_metric": "Recall@20",
@@ -11,13 +11,44 @@
   "best_valid_result": {
     "recall@10": 0.0368,
     "recall@20": 0.0605,
+    "recall@50": 0.1096,
     "ndcg@10": 0.0195,
-    "ndcg@20": 0.0255
+    "ndcg@20": 0.0255,
+    "ndcg@50": 0.0353,
+    "precision@10": 0.0039,
+    "precision@20": 0.0032,
+    "precision@50": 0.0023,
+    "map@10": 0.0139,
+    "map@20": 0.0155,
+    "map@50": 0.017
   },
   "best_test_result": {
-    "recall@10": 0.0372,
+    "recall@10": 0.0371,
     "recall@20": 0.0592,
+    "recall@50": 0.1098,
     "ndcg@10": 0.0199,
-    "ndcg@20": 0.0256
-  }
+    "ndcg@20": 0.0256,
+    "ndcg@50": 0.0358,
+    "precision@10": 0.0042,
+    "precision@20": 0.0033,
+    "precision@50": 0.0025,
+    "map@10": 0.0141,
+    "map@20": 0.0156,
+    "map@50": 0.0172
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0371,
+    "recall@20": 0.0592,
+    "recall@50": 0.1098,
+    "ndcg@10": 0.0199,
+    "ndcg@20": 0.0256,
+    "ndcg@50": 0.0358,
+    "precision@10": 0.0042,
+    "precision@20": 0.0033,
+    "precision@50": 0.0025,
+    "map@10": 0.0141,
+    "map@20": 0.0156,
+    "map@50": 0.0172
+  },
+  "source_log": "docs/log/VBPR/baby/VBPR-baby-Oct-12-2026-18-21-43.log"
 }

@@ -2,31 +2,62 @@
   "model": "HPMRec",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
-    "n_layers": 2,
+    "n_layers": 3,
     "aggr_mode": "add",
     "ssl_temp": 0.2,
     "learnable_temp": true,
     "contrast_type": "InfoNCE",
     "learning_rate": 0.0001,
-    "reg_weight": 0.001,
-    "ssl_weight": 0.0001,
+    "reg_weight": 0.0001,
+    "ssl_weight": 0.001,
     "algebra_dim": 4,
-    "warm_up_epochs": null
+    "warm_up_epochs": null,
+    "seed": 2026
   },
-  "best_epoch": 136,
+  "best_epoch": 71,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.1011,
+  "best_valid_score": 0.1006,
   "best_valid_result": {
-    "recall@10": 0.0649,
-    "recall@20": 0.1011,
-    "ndcg@10": 0.0354,
-    "ndcg@20": 0.0446
+    "recall@10": 0.0635,
+    "recall@20": 0.1006,
+    "recall@50": 0.1684,
+    "ndcg@10": 0.0343,
+    "ndcg@20": 0.0438,
+    "ndcg@50": 0.0573,
+    "precision@10": 0.0066,
+    "precision@20": 0.0053,
+    "precision@50": 0.0036,
+    "map@10": 0.0252,
+    "map@20": 0.0277,
+    "map@50": 0.0298
   },
   "best_test_result": {
-    "recall@10": 0.066,
-    "recall@20": 0.1024,
-    "ndcg@10": 0.036,
-    "ndcg@20": 0.0453
-  }
+    "recall@10": 0.0645,
+    "recall@20": 0.1017,
+    "recall@50": 0.1718,
+    "ndcg@10": 0.0348,
+    "ndcg@20": 0.0443,
+    "ndcg@50": 0.0585,
+    "precision@10": 0.0071,
+    "precision@20": 0.0056,
+    "precision@50": 0.0038,
+    "map@10": 0.0249,
+    "map@20": 0.0275,
+    "map@50": 0.0297
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0645,
+    "recall@20": 0.1017,
+    "recall@50": 0.1718,
+    "ndcg@10": 0.0348,
+    "ndcg@20": 0.0443,
+    "ndcg@50": 0.0585,
+    "precision@10": 0.0071,
+    "precision@20": 0.0056,
+    "precision@50": 0.0038,
+    "map@10": 0.0249,
+    "map@20": 0.0275,
+    "map@50": 0.0297
+  },
+  "source_log": "docs/log/HPMRec/baby/HPMRec-baby-Oct-16-2026-09-24-37.log"
 }

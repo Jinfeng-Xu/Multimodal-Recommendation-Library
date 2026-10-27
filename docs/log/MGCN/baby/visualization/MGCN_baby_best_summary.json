@@ -2,22 +2,53 @@
   "model": "MGCN",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
-    "cl_loss": 0.001
+    "cl_loss": 0.001,
+    "seed": 2026
   },
   "best_epoch": 43,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.0927,
+  "best_valid_score": 0.0928,
   "best_valid_result": {
-    "recall@10": 0.0619,
-    "recall@20": 0.0927,
-    "ndcg@10": 0.033,
-    "ndcg@20": 0.0408
+    "recall@10": 0.0618,
+    "recall@20": 0.0928,
+    "recall@50": 0.1548,
+    "ndcg@10": 0.0329,
+    "ndcg@20": 0.0408,
+    "ndcg@50": 0.0532,
+    "precision@10": 0.0065,
+    "precision@20": 0.0049,
+    "precision@50": 0.0033,
+    "map@10": 0.0239,
+    "map@20": 0.026,
+    "map@50": 0.0279
   },
   "best_test_result": {
-    "recall@10": 0.0629,
+    "recall@10": 0.063,
     "recall@20": 0.0964,
-    "ndcg@10": 0.0346,
-    "ndcg@20": 0.0433
-  }
+    "recall@50": 0.1615,
+    "ndcg@10": 0.0347,
+    "ndcg@20": 0.0433,
+    "ndcg@50": 0.0564,
+    "precision@10": 0.0069,
+    "precision@20": 0.0053,
+    "precision@50": 0.0036,
+    "map@10": 0.0252,
+    "map@20": 0.0275,
+    "map@50": 0.0296
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.063,
+    "recall@20": 0.0964,
+    "recall@50": 0.1615,
+    "ndcg@10": 0.0347,
+    "ndcg@20": 0.0433,
+    "ndcg@50": 0.0564,
+    "precision@10": 0.0069,
+    "precision@20": 0.0053,
+    "precision@50": 0.0036,
+    "map@10": 0.0252,
+    "map@20": 0.0275,
+    "map@50": 0.0296
+  },
+  "source_log": "docs/log/MGCN/baby/MGCN-baby-Oct-12-2026-18-56-55.log"
 }

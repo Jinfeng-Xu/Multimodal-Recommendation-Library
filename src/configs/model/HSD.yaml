@@ -1,4 +1,6 @@
 # TMM 2026: Hierarchy-Aware Multimodal Distillation for Recommendation
+# Official defaults from Tuo97/HSD commit
+# 9c0b2647a5d28eda95048cfcfa9ba98ed82a1520.
 embedding_size: 64
 n_layers: 3
 curvature: 1.0
@@ -8,5 +10,7 @@ kl_weight: 0.6
 tau: 1.5
 l2_weight: 0.0
 
-# A single reproducible run; dataset-specific tuning can override these values.
+# The official repository publishes one configuration rather than a search grid.
+# The reproducible 27-point Baby benchmark search is recorded separately in
+# benchmark_runs/hsd_stability_20261027/run_hsd_full_search.py.
 hyper_parameters: []

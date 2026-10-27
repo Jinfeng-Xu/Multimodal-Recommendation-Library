@@ -131,20 +131,22 @@ hyper_parameters: ["n_layers", "reg_weight"]
 ```
 data/
 └── {dataset_name}/
-    ├── inter.csv          # User-item interactions
+    ├── {dataset_name}.inter # User-item interactions (tab-separated)
     ├── visual_feat.npy    # Visual features (optional)
     ├── textual_feat.npy   # Text features (optional)
     └── *_feat.npy         # Other features (optional)
 ```
 
-### Interaction File Format
+### Interaction File Format (`{dataset_name}.inter`)
 
-```csv
-user_id,item_id,rating,label
-0,123,5,1
-1,456,4,1
-2,789,5,1
+```tsv
+userID	itemID	x_label
+0	123	0
+1	456	1
+2	789	2
 ```
+
+`x_label` identifies the split: `0` for training, `1` for validation, and `2` for testing. The exact interaction filename and field names can be changed in the corresponding dataset YAML file under `src/configs/dataset/`.
 
 ### Feature Files
 
@@ -188,29 +190,36 @@ MRS/
 ### Baby dataset
 
 
-| Model                                | Recall@10 | Recall@20 | NDCG@10 | NDCG@20 | Training Time | Inference Time |
-| ------------------------------------ | --------- | --------- | ------- | ------- | ------------- | -------------- |
-| [VBPR](docs/log/VBPR/baby)           | 0.0372    | 0.0592    | 0.0199  | 0.0256  | 0.36s/epoch   | 0.63s/epoch    |
-| [MMGCN](docs/log/MMGCN/baby)       | 0.0414    | 0.0682    | 0.0215  | 0.0284  | 2.18s/epoch   | 0.62s/epoch    |
-| [GRCN](docs/log/GRCN/baby)         | 0.0493    | 0.0790    | 0.0258  | 0.0334  | 1.47s/epoch   | 0.58s/epoch    |
-| [LATTICE](docs/log/LATTICE/baby)   | 0.0584    | 0.0893    | 0.0314  | 0.0393  | 0.72s/epoch   | 0.59s/epoch    |
-| [DualGNN](docs/log/DualGNN/baby)   | 0.0367    | 0.0592    | 0.0192  | 0.0250  | 4.43s/epoch   | 0.59s/epoch    |
-| [SLMRec](docs/log/SLMRec/baby)     | 0.0518    | 0.0774    | 0.0287  | 0.0353  | 2.33s/epoch   | 0.60s/epoch    |
-| [BM3](docs/log/BM3/baby)           | 0.0536    | 0.0856    | 0.0289  | 0.0371  | 0.61s/epoch   | 0.58s/epoch    |
-| [MMSSL](docs/log/MMSSL/baby)       | 0.0559    | 0.0889    | 0.0306  | 0.0391  | 4.64s/epoch   | 0.61s/epoch    |
-| [FREEDOM](docs/log/FREEDOM/baby)   | 0.0622    | 0.0977    | 0.0337  | 0.0427  | 0.77s/epoch   | 0.59s/epoch    |
-| [MGCN](docs/log/MGCN/baby)         | 0.0629    | 0.0964    | 0.0346  | 0.0433  | 1.15s/epoch   | 0.60s/epoch    |
-| [DRAGON](docs/log/DRAGON/baby)     | 0.0637    | 0.1004    | 0.0351  | 0.0445  | 4.48s/epoch   | 0.67s/epoch    |
-| [LGMRec](docs/log/LGMRec/baby)     | 0.0652    | 0.1031    | 0.0353  | 0.0450  | 1.47s/epoch   | 0.60s/epoch    |
-| [DiffMM](docs/log/DiffMM/baby)     | 0.0578    | 0.0900    | 0.0314  | 0.0397  | 0.91s/epoch   | 0.60s/epoch    |
-| [DAMRS](docs/log/DAMRS/baby)       | 0.0578    | 0.0924    | 0.0316  | 0.0406  | 2.56s/epoch   | 0.58s/epoch    |
-| [MENTOR](docs/log/MENTOR/baby)     | 🥈0.0670   | 🥉0.1048   | 🥈0.0362 | 🥈0.0459 | 5.70s/epoch   | 0.59s/epoch    |
-| [PGL](docs/log/PGL/baby)           | 0.0610    | 0.0960    | 0.0325  | 0.0415  | 0.88s/epoch   | 0.59s/epoch    |
-| [SMORE](docs/log/SMORE/baby)       | 🥇0.0678   | 0.1039    | 🥇0.0368 | 🥇0.0460 | 1.39s/epoch   | 0.67s/epoch    |
-| [COHESION](docs/log/COHESION/baby) | 🥈0.0670   | 🥈0.1050   | 0.0350  | 0.0447  | 4.53s/epoch   | 0.59s/epoch    |
-| [SSR](docs/log/SSR/baby)           | 🥉0.0665   | 🥇0.1065   | 0.0357  | 🥇0.0460 | 9.80s/epoch   | 0.81s/epoch    |
-| [HPMRec](docs/log/HPMRec/baby)     | 0.0660    | 0.1024    | 🥉0.0360 | 🥉0.0453 | 6.15s/epoch   | 2.07s/epoch    |
-| [LOBSTER](docs/log/LOBSTER/baby)   | 0.0551    | 0.0861    | 0.0296  | 0.0376  | 1.39s/epoch   | 0.61s/epoch    |
+The table reports test-set metrics for the validation-selected global-best configuration. 🥇/🥈/🥉 mark the top three distinct values in each metric; ties share the same medal. Best hyperparameters and the downloaded source-log mapping are in [results.json](docs/results.json).
+
+| Model | Recall@10 | Recall@20 | Recall@50 | NDCG@10 | NDCG@20 | NDCG@50 | Precision@10 | Precision@20 | Precision@50 | MAP@10 | MAP@20 | MAP@50 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| [VBPR](docs/log/VBPR/baby) | 0.0371 | 0.0592 | 0.1098 | 0.0199 | 0.0256 | 0.0358 | 0.0042 | 0.0033 | 0.0025 | 0.0141 | 0.0156 | 0.0172 |
+| [MMGCN](docs/log/MMGCN/baby) | 0.0398 | 0.0641 | 0.1140 | 0.0210 | 0.0272 | 0.0373 | 0.0044 | 0.0035 | 0.0025 | 0.0148 | 0.0164 | 0.0180 |
+| [GRCN](docs/log/GRCN/baby) | 0.0475 | 0.0776 | 0.1368 | 0.0251 | 0.0328 | 0.0448 | 0.0053 | 0.0043 | 0.0031 | 0.0176 | 0.0197 | 0.0215 |
+| [LATTICE](docs/log/LATTICE/baby) | 0.0597 | 0.0898 | 0.1495 | 0.0322 | 0.0400 | 0.0521 | 0.0066 | 0.0050 | 0.0034 | 0.0231 | 0.0252 | 0.0271 |
+| [DualGNN](docs/log/DualGNN/baby) | 0.0365 | 0.0588 | 0.1073 | 0.0190 | 0.0247 | 0.0345 | 0.0041 | 0.0033 | 0.0024 | 0.0132 | 0.0147 | 0.0162 |
+| [SLMRec](docs/log/SLMRec/baby) | 0.0518 | 0.0774 | 0.1256 | 0.0287 | 0.0353 | 0.0451 | 0.0058 | 0.0043 | 0.0028 | 0.0209 | 0.0226 | 0.0242 |
+| [BM3](docs/log/BM3/baby) | 0.0531 | 0.0836 | 0.1481 | 0.0284 | 0.0362 | 0.0492 | 0.0059 | 0.0047 | 0.0033 | 0.0201 | 0.0222 | 0.0243 |
+| [MMSSL](docs/log/MMSSL/baby) | 0.0569 | 0.0907 | 0.1543 | 0.0309 | 0.0396 | 0.0524 | 0.0063 | 0.0050 | 0.0035 | 0.0222 | 0.0245 | 0.0265 |
+| [FREEDOM](docs/log/FREEDOM/baby) | 0.0622 | 0.0975 | 0.1656 | 0.0339 | 0.0430 | 0.0568 | 0.0068 | 0.0054 | 🥉0.0037 | 0.0245 | 0.0270 | 0.0291 |
+| [MGCN](docs/log/MGCN/baby) | 0.0630 | 0.0964 | 0.1615 | 0.0347 | 0.0433 | 0.0564 | 0.0069 | 0.0053 | 0.0036 | 0.0252 | 0.0275 | 0.0296 |
+| [DRAGON](docs/log/DRAGON/baby) | 0.0644 | 0.0993 | 0.1668 | 0.0350 | 0.0440 | 0.0577 | 0.0071 | 0.0055 | 🥉0.0037 | 0.0253 | 0.0277 | 0.0298 |
+| [LGMRec](docs/log/LGMRec/baby) | 0.0660 | 0.1026 | 0.1680 | 0.0358 | 0.0452 | 0.0585 | 0.0072 | 🥉0.0057 | 🥉0.0037 | 0.0258 | 0.0284 | 0.0305 |
+| [DiffMM](docs/log/DiffMM/baby) | 0.0578 | 0.0900 | 0.1550 | 0.0314 | 0.0397 | 0.0528 | 0.0064 | 0.0050 | 0.0035 | 0.0227 | 0.0249 | 0.0269 |
+| [DAMRS](docs/log/DAMRS/baby) | 0.0591 | 0.0941 | 0.1583 | 0.0318 | 0.0409 | 0.0538 | 0.0066 | 0.0052 | 0.0035 | 0.0227 | 0.0251 | 0.0271 |
+| [MENTOR](docs/log/MENTOR/baby) | 0.0669 | 0.1044 | 0.1690 | 0.0363 | 0.0460 | 0.0591 | 🥉0.0074 | 🥈0.0058 | 🥈0.0038 | 0.0262 | 0.0288 | 0.0309 |
+| [PGL](docs/log/PGL/baby) | 0.0622 | 0.0969 | 0.1686 | 0.0332 | 0.0421 | 0.0566 | 0.0068 | 0.0053 | 🥉0.0037 | 0.0236 | 0.0260 | 0.0283 |
+| [SMORE](docs/log/SMORE/baby) | 0.0679 | 0.1041 | 0.1738 | 🥉0.0369 | 🥉0.0461 | 🥉0.0602 | 🥈0.0075 | 🥉0.0057 | 🥇0.0039 | 🥉0.0265 | 🥉0.0290 | 🥉0.0312 |
+| [COHESION](docs/log/COHESION/baby) | 🥈0.0684 | 🥉0.1045 | 🥉0.1744 | 0.0363 | 0.0456 | 0.0597 | 🥈0.0075 | 🥈0.0058 | 🥇0.0039 | 0.0257 | 0.0282 | 0.0304 |
+| [SSR](docs/log/SSR/baby) | 0.0665 | 🥈0.1065 | 🥈0.1758 | 0.0357 | 0.0460 | 0.0600 | 0.0073 | 🥇0.0059 | 🥇0.0039 | 0.0255 | 0.0283 | 0.0305 |
+| [HPMRec](docs/log/HPMRec/baby) | 0.0645 | 0.1017 | 0.1718 | 0.0348 | 0.0443 | 0.0585 | 0.0071 | 0.0056 | 🥈0.0038 | 0.0249 | 0.0275 | 0.0297 |
+| [LOBSTER](docs/log/LOBSTER/baby) | 0.0550 | 0.0867 | 0.1498 | 0.0290 | 0.0372 | 0.0499 | 0.0061 | 0.0048 | 0.0033 | 0.0204 | 0.0226 | 0.0246 |
+| [MSCA](docs/log/MSCA/baby) | 🥉0.0682 | 0.1035 | 0.1738 | 🥈0.0375 | 🥈0.0465 | 🥈0.0608 | 🥈0.0075 | 🥉0.0057 | 🥇0.0039 | 🥈0.0273 | 🥈0.0297 | 🥈0.0319 |
+| [AMUR](docs/log/AMUR/baby) | 0.0663 | 0.1001 | 0.1688 | 0.0359 | 0.0445 | 0.0584 | 0.0073 | 0.0055 | 🥉0.0037 | 0.0258 | 0.0280 | 0.0302 |
+| [HSD](docs/log/HSD/baby) | 0.0575 | 0.0886 | 0.1503 | 0.0301 | 0.0381 | 0.0506 | 0.0064 | 0.0049 | 0.0034 | 0.0210 | 0.0231 | 0.0251 |
+| [IIMRec](docs/log/IIMRec/baby) | 🥇0.0701 | 🥇0.1073 | 🥇0.1764 | 🥇0.0382 | 🥇0.0478 | 🥇0.0618 | 🥇0.0077 | 🥇0.0059 | 🥇0.0039 | 🥇0.0276 | 🥇0.0302 | 🥇0.0324 |
+| [PNGRec](docs/log/PNGRec/baby) | 0.0678 | 0.1043 | 0.1721 | 0.0366 | 0.0460 | 0.0597 | 🥈0.0075 | 🥉0.0057 | 🥈0.0038 | 0.0263 | 0.0288 | 0.0309 |
 
 🔜 Results for the other datasets are coming soon.
 

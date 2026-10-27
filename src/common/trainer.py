@@ -63,6 +63,7 @@ class Trainer(AbstractTrainer):
         for j, k in list(itertools.product(config['metrics'], config['topk'])):
             tmp_dd[f'{j.lower()}@{k}'] = 0.0
         self.best_valid_score = -1
+        self.best_epoch = -1
         self.best_valid_result = tmp_dd
         self.best_test_upon_valid = tmp_dd
         self.train_loss_dict = dict()
@@ -121,10 +122,15 @@ class Trainer(AbstractTrainer):
                 loss = losses
                 total_loss = losses.item() if total_loss is None else total_loss + losses.item()
             
-            # Check for NaN
-            if torch.isnan(loss):
-                self.logger.info(f'Loss is nan at epoch: {epoch_idx}, batch index: {batch_idx}')
-                return loss, torch.tensor(0.0)
+            # A non-finite loss invalidates the run. Raise explicitly so callers and
+            # automation cannot mistake a numerically failed training job for success.
+            if self._check_non_finite(loss):
+                message = (
+                    f'Non-finite loss at epoch {epoch_idx}, batch index {batch_idx}: '
+                    f'{loss.detach().item()}'
+                )
+                self.logger.error(message)
+                raise FloatingPointError(message)
 
             # Backward propagation (Mirror Gradient logic removed)
             loss.backward()
@@ -145,9 +151,9 @@ class Trainer(AbstractTrainer):
         valid_score = valid_result[self.valid_metric] if self.valid_metric else valid_result['NDCG@20']
         return valid_score, valid_result
 
-    def _check_nan(self, loss):
-        """Check for NaN"""
-        return torch.isnan(loss)
+    def _check_non_finite(self, loss):
+        """Return whether a scalar loss is NaN or infinite."""
+        return not torch.isfinite(loss).all().item()
 
     def _generate_train_loss_output(self, epoch_idx, s_time, e_time, losses):
         """Generate training loss output"""
@@ -167,9 +173,6 @@ class Trainer(AbstractTrainer):
                 self.model.pre_epoch_processing()
             
             train_loss, _ = self._train_epoch(train_data, epoch_idx)
-            
-            if torch.is_tensor(train_loss):
-                break  # NaN loss
             
             self.lr_scheduler.step()
             train_loss_value = sum(train_loss) if isinstance(train_loss, tuple) else train_loss
@@ -229,12 +232,13 @@ class Trainer(AbstractTrainer):
                         self.logger.info(update_output)
                     self.best_valid_result = valid_result
                     self.best_test_upon_valid = test_result
+                    self.best_epoch = epoch_idx
 
                 if stop_flag:
                     box_width = 92
                     stop_output = f"╔{'═' * box_width}╗\n"
-                    stop_output += f"║ ✅ Training finished at epoch {epoch_idx + 1} | Best at epoch {self.visualizer.best_epoch + 1}\n"
-                    stop_output += f"║ 🏆 {self.config['valid_metric']} = {self.visualizer.best_valid_score:.4f}\n"
+                    stop_output += f"║ ✅ Training finished at epoch {epoch_idx + 1} | Best at epoch {self.best_epoch + 1}\n"
+                    stop_output += f"║ 🏆 {self.config['valid_metric']} = {self.best_valid_score:.4f}\n"
                     stop_output += f"╚{'═' * box_width}╝"
                     if verbose:
                         self.logger.info(stop_output)

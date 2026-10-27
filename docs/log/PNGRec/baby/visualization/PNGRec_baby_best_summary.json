@@ -1,0 +1,58 @@
+{
+  "model": "PNGRec",
+  "dataset": "baby",
+  "best_hyper_parameters": {
+    "n_ui_layers": 4,
+    "image_knn_k": 40,
+    "text_knn_k": 10,
+    "dropout_rate": 0.1,
+    "cl_loss": 0.01,
+    "seed": 2026
+  },
+  "best_epoch": 48,
+  "valid_metric": "Recall@20",
+  "best_valid_score": 0.0996,
+  "best_valid_result": {
+    "recall@10": 0.0663,
+    "recall@20": 0.0996,
+    "recall@50": 0.1647,
+    "ndcg@10": 0.0359,
+    "ndcg@20": 0.0444,
+    "ndcg@50": 0.0574,
+    "precision@10": 0.007,
+    "precision@20": 0.0053,
+    "precision@50": 0.0035,
+    "map@10": 0.0263,
+    "map@20": 0.0286,
+    "map@50": 0.0306
+  },
+  "best_test_result": {
+    "recall@10": 0.0678,
+    "recall@20": 0.1043,
+    "recall@50": 0.1721,
+    "ndcg@10": 0.0366,
+    "ndcg@20": 0.046,
+    "ndcg@50": 0.0597,
+    "precision@10": 0.0075,
+    "precision@20": 0.0057,
+    "precision@50": 0.0038,
+    "map@10": 0.0263,
+    "map@20": 0.0288,
+    "map@50": 0.0309
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0678,
+    "recall@20": 0.1043,
+    "recall@50": 0.1721,
+    "ndcg@10": 0.0366,
+    "ndcg@20": 0.046,
+    "ndcg@50": 0.0597,
+    "precision@10": 0.0075,
+    "precision@20": 0.0057,
+    "precision@50": 0.0038,
+    "map@10": 0.0263,
+    "map@20": 0.0288,
+    "map@50": 0.0309
+  },
+  "source_log": "docs/log/PNGRec/baby/PNGRec-baby-Oct-13-2026-11-25-33.log"
+}

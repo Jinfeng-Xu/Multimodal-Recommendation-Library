@@ -2,23 +2,54 @@
   "model": "DualGNN",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "k": 40,
-    "reg_weight": 0.01
+    "reg_weight": 0.1,
+    "seed": 2026
   },
   "best_epoch": 5,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.0581,
+  "best_valid_score": 0.0584,
   "best_valid_result": {
-    "recall@10": 0.0357,
-    "recall@20": 0.0581,
-    "ndcg@10": 0.0189,
-    "ndcg@20": 0.0246
+    "recall@10": 0.0361,
+    "recall@20": 0.0584,
+    "recall@50": 0.1059,
+    "ndcg@10": 0.0187,
+    "ndcg@20": 0.0244,
+    "ndcg@50": 0.0339,
+    "precision@10": 0.0038,
+    "precision@20": 0.0031,
+    "precision@50": 0.0022,
+    "map@10": 0.0133,
+    "map@20": 0.0148,
+    "map@50": 0.0163
   },
   "best_test_result": {
-    "recall@10": 0.0367,
-    "recall@20": 0.0592,
-    "ndcg@10": 0.0192,
-    "ndcg@20": 0.025
-  }
+    "recall@10": 0.0365,
+    "recall@20": 0.0588,
+    "recall@50": 0.1073,
+    "ndcg@10": 0.019,
+    "ndcg@20": 0.0247,
+    "ndcg@50": 0.0345,
+    "precision@10": 0.0041,
+    "precision@20": 0.0033,
+    "precision@50": 0.0024,
+    "map@10": 0.0132,
+    "map@20": 0.0147,
+    "map@50": 0.0162
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0365,
+    "recall@20": 0.0588,
+    "recall@50": 0.1073,
+    "ndcg@10": 0.019,
+    "ndcg@20": 0.0247,
+    "ndcg@50": 0.0345,
+    "precision@10": 0.0041,
+    "precision@20": 0.0033,
+    "precision@50": 0.0024,
+    "map@10": 0.0132,
+    "map@20": 0.0147,
+    "map@50": 0.0162
+  },
+  "source_log": "docs/log/DualGNN/baby/DualGNN-baby-Oct-12-2026-19-14-44.log"
 }

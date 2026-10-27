@@ -2,25 +2,56 @@
   "model": "LOBSTER",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "dropout": 0.3,
-    "reg_weight": 0.01,
-    "factor_num_u": 6,
-    "factor_num_i": 2
+    "reg_weight": 0.001,
+    "factor_num_u": 4,
+    "factor_num_i": 8,
+    "seed": 2026
   },
-  "best_epoch": 117,
+  "best_epoch": 91,
   "valid_metric": "Recall@20",
-  "best_valid_score": 0.0842,
+  "best_valid_score": 0.0859,
   "best_valid_result": {
-    "recall@10": 0.0525,
-    "recall@20": 0.0842,
-    "ndcg@10": 0.0279,
-    "ndcg@20": 0.036
+    "recall@10": 0.0551,
+    "recall@20": 0.0859,
+    "recall@50": 0.1444,
+    "ndcg@10": 0.0291,
+    "ndcg@20": 0.037,
+    "ndcg@50": 0.0487,
+    "precision@10": 0.0058,
+    "precision@20": 0.0045,
+    "precision@50": 0.0031,
+    "map@10": 0.021,
+    "map@20": 0.0231,
+    "map@50": 0.0249
   },
   "best_test_result": {
-    "recall@10": 0.0551,
-    "recall@20": 0.0861,
-    "ndcg@10": 0.0296,
-    "ndcg@20": 0.0376
-  }
+    "recall@10": 0.055,
+    "recall@20": 0.0867,
+    "recall@50": 0.1498,
+    "ndcg@10": 0.029,
+    "ndcg@20": 0.0372,
+    "ndcg@50": 0.0499,
+    "precision@10": 0.0061,
+    "precision@20": 0.0048,
+    "precision@50": 0.0033,
+    "map@10": 0.0204,
+    "map@20": 0.0226,
+    "map@50": 0.0246
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.055,
+    "recall@20": 0.0867,
+    "recall@50": 0.1498,
+    "ndcg@10": 0.029,
+    "ndcg@20": 0.0372,
+    "ndcg@50": 0.0499,
+    "precision@10": 0.0061,
+    "precision@20": 0.0048,
+    "precision@50": 0.0033,
+    "map@10": 0.0204,
+    "map@20": 0.0226,
+    "map@50": 0.0246
+  },
+  "source_log": "docs/log/LOBSTER/baby/LOBSTER-baby-Oct-19-2026-21-41-20.log"
 }

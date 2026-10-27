@@ -1,0 +1,56 @@
+{
+  "model": "HSD",
+  "dataset": "baby",
+  "best_hyper_parameters": {
+    "n_layers": 3,
+    "channel_weight": 0.4,
+    "kl_weight": 1.0,
+    "seed": 2026
+  },
+  "best_epoch": 16,
+  "valid_metric": "Recall@20",
+  "best_valid_score": 0.0842,
+  "best_valid_result": {
+    "recall@10": 0.0526,
+    "recall@20": 0.0842,
+    "recall@50": 0.1456,
+    "ndcg@10": 0.0279,
+    "ndcg@20": 0.036,
+    "ndcg@50": 0.0482,
+    "precision@10": 0.0056,
+    "precision@20": 0.0045,
+    "precision@50": 0.0031,
+    "map@10": 0.02,
+    "map@20": 0.0222,
+    "map@50": 0.0241
+  },
+  "best_test_result": {
+    "recall@10": 0.0575,
+    "recall@20": 0.0886,
+    "recall@50": 0.1503,
+    "ndcg@10": 0.0301,
+    "ndcg@20": 0.0381,
+    "ndcg@50": 0.0506,
+    "precision@10": 0.0064,
+    "precision@20": 0.0049,
+    "precision@50": 0.0034,
+    "map@10": 0.021,
+    "map@20": 0.0231,
+    "map@50": 0.0251
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0575,
+    "recall@20": 0.0886,
+    "recall@50": 0.1503,
+    "ndcg@10": 0.0301,
+    "ndcg@20": 0.0381,
+    "ndcg@50": 0.0506,
+    "precision@10": 0.0064,
+    "precision@20": 0.0049,
+    "precision@50": 0.0034,
+    "map@10": 0.021,
+    "map@20": 0.0231,
+    "map@50": 0.0251
+  },
+  "source_log": "docs/log/HSD/baby/HSD-baby-Oct-27-2026-13-10-17.log"
+}

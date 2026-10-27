@@ -2,11 +2,11 @@
   "model": "SLMRec",
   "dataset": "baby",
   "best_hyper_parameters": {
-    "seed": 2026,
     "layer_num": 3,
     "reg_weight": 0.0001,
     "ssl_alpha": 0.1,
-    "ssl_temp": 1.0
+    "ssl_temp": 1.0,
+    "seed": 2026
   },
   "best_epoch": 8,
   "valid_metric": "Recall@20",
@@ -14,13 +14,44 @@
   "best_valid_result": {
     "recall@10": 0.0511,
     "recall@20": 0.0772,
+    "recall@50": 0.1235,
     "ndcg@10": 0.0272,
-    "ndcg@20": 0.0338
+    "ndcg@20": 0.0338,
+    "ndcg@50": 0.0431,
+    "precision@10": 0.0054,
+    "precision@20": 0.0041,
+    "precision@50": 0.0026,
+    "map@10": 0.0196,
+    "map@20": 0.0214,
+    "map@50": 0.0229
   },
   "best_test_result": {
     "recall@10": 0.0518,
     "recall@20": 0.0774,
+    "recall@50": 0.1256,
     "ndcg@10": 0.0287,
-    "ndcg@20": 0.0353
-  }
+    "ndcg@20": 0.0353,
+    "ndcg@50": 0.0451,
+    "precision@10": 0.0058,
+    "precision@20": 0.0043,
+    "precision@50": 0.0028,
+    "map@10": 0.0209,
+    "map@20": 0.0226,
+    "map@50": 0.0242
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0518,
+    "recall@20": 0.0774,
+    "recall@50": 0.1256,
+    "ndcg@10": 0.0287,
+    "ndcg@20": 0.0353,
+    "ndcg@50": 0.0451,
+    "precision@10": 0.0058,
+    "precision@20": 0.0043,
+    "precision@50": 0.0028,
+    "map@10": 0.0209,
+    "map@20": 0.0226,
+    "map@50": 0.0242
+  },
+  "source_log": "docs/log/SLMRec/baby/SLMRec-baby-Oct-23-2026-12-25-59.log"
 }

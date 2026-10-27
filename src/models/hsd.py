@@ -1,7 +1,14 @@
 # coding: utf-8
 """Hierarchy-Aware Multimodal Distillation for Recommendation (TMM 2026).
 
-Adapted from https://github.com/Tuo97/HSD for MRLib's data/trainer API.
+Adapted from https://github.com/Tuo97/HSD at commit
+9c0b2647a5d28eda95048cfcfa9ba98ed82a1520 for MRLib's data/trainer API.
+
+The propagation, modality scaling, fused/channel BPR losses, and one-way
+fusion-to-channel KL distillation follow the upstream implementation. The
+standalone source stores four intended trainable embedding tensors as ordinary
+attributes, which excludes them from ``Module.parameters()``. They are
+registered as ``nn.Parameter`` here so the optimizer can update them.
 """
 
 import numpy as np
@@ -18,7 +25,9 @@ class _Hyperboloid:
 
     eps = {torch.float32: 1e-7, torch.float64: 1e-15}
     min_norm = 1e-15
-    max_norm = 1e6
+    # cosh/sinh overflow far below 1e6 (about 89 for float32). Keeping the
+    # Lorentz radius bounded also prevents exploding gradients in expmap0.
+    max_theta = {torch.float32: 15.0, torch.float64: 30.0}
 
     @staticmethod
     def _arcosh(x):
@@ -42,7 +51,7 @@ class _Hyperboloid:
         radius = torch.sqrt(1.0 / curvature)
         spatial = u[..., 1:]
         norm = torch.clamp(torch.norm(spatial, p=2, dim=-1, keepdim=True), min=self.min_norm)
-        theta = torch.clamp(norm / radius, max=self.max_norm)
+        theta = torch.clamp(norm / radius, max=self.max_theta.get(u.dtype, 15.0))
         result = torch.zeros_like(u)
         result[..., :1] = radius * torch.cosh(theta)
         result[..., 1:] = radius * torch.sinh(theta) * spatial / norm
@@ -174,13 +183,15 @@ class HSD(GeneralRecommender):
                 reduction="batchmean",
             )
 
-        regularization = sum(parameter.square().sum() for parameter in self.parameters())
-        return (
+        total_loss = (
             recommendation_loss
             + self.channel_weight * channel_loss
             + self.kl_weight * distillation_loss
-            + self.l2_weight * regularization
         )
+        if self.l2_weight > 0:
+            regularization = sum(parameter.square().sum() for parameter in self.parameters())
+            total_loss = total_loss + self.l2_weight * regularization
+        return total_loss
 
     def full_sort_predict(self, interaction):
         users = interaction[0]

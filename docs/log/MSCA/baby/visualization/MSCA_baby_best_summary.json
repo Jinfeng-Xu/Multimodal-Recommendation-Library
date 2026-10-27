@@ -1,0 +1,57 @@
+{
+  "model": "MSCA",
+  "dataset": "baby",
+  "best_hyper_parameters": {
+    "n_layers": 2,
+    "fusion_coeff": 0.4,
+    "cl_weight": 0.005,
+    "reg_weight": 3e-07,
+    "seed": 2026
+  },
+  "best_epoch": 41,
+  "valid_metric": "Recall@20",
+  "best_valid_score": 0.104,
+  "best_valid_result": {
+    "recall@10": 0.0675,
+    "recall@20": 0.104,
+    "recall@50": 0.1696,
+    "ndcg@10": 0.0372,
+    "ndcg@20": 0.0464,
+    "ndcg@50": 0.0596,
+    "precision@10": 0.0071,
+    "precision@20": 0.0055,
+    "precision@50": 0.0036,
+    "map@10": 0.0276,
+    "map@20": 0.0301,
+    "map@50": 0.0322
+  },
+  "best_test_result": {
+    "recall@10": 0.0682,
+    "recall@20": 0.1035,
+    "recall@50": 0.1738,
+    "ndcg@10": 0.0375,
+    "ndcg@20": 0.0465,
+    "ndcg@50": 0.0608,
+    "precision@10": 0.0075,
+    "precision@20": 0.0057,
+    "precision@50": 0.0039,
+    "map@10": 0.0273,
+    "map@20": 0.0297,
+    "map@50": 0.0319
+  },
+  "curve_test_result_at_best_epoch": {
+    "recall@10": 0.0682,
+    "recall@20": 0.1035,
+    "recall@50": 0.1738,
+    "ndcg@10": 0.0375,
+    "ndcg@20": 0.0465,
+    "ndcg@50": 0.0608,
+    "precision@10": 0.0075,
+    "precision@20": 0.0057,
+    "precision@50": 0.0039,
+    "map@10": 0.0273,
+    "map@20": 0.0297,
+    "map@50": 0.0319
+  },
+  "source_log": "docs/log/MSCA/baby/MSCA-baby-Oct-12-2026-18-13-04.log"
+}
